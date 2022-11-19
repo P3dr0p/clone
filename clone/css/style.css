@@ -1,0 +1,90 @@
+/* Reset no css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Aplicando cor de fundo no corpo do html */
+body{
+    background: #DDD;
+}
+/* Aplicando o espaçamento interno no cabeçalho e nas caixas */
+header, section{
+    padding: 5rem;
+}
+header{
+    background-color: #2196F3;
+}
+
+main{
+    /* Conteúdo Irá ficar centralizado */
+     margin: auto;
+
+     /* Aplicando a Propriedade Grid */
+     display: grid;
+
+     /* Aplicando espaço em linhas entre as section */
+     grid-row-gap: 1rem; 
+
+     /* Aplicando colunas e linhas na página */
+     grid-template-areas: 
+     'video-player video-player'
+     'video-info   video-info  '
+     'actions      actions     '
+     'subscribe    subscribe   '
+     'channel      channel     '
+     'up-next      up-next     ';
+}
+
+.video-player{
+    background-color: #FFEB3B;
+    grid-area: video-player;
+}
+.video-info{
+    background-color: #E91E63;
+    grid-area: video-info;
+}
+.actions{
+    background-color: #03A9F4;
+    grid-area: actions;
+}
+.channel{
+    background-color: #673AB7;
+    grid-area: channel;
+}
+.subscribe{
+    background-color: #8BC34A;
+    grid-area: subscribe;
+}
+.ad{
+    background-color: #FF5722;
+    grid-area: ad;
+    /* Display: none esconde um elemento */
+    /* display: none; */
+}
+.up-next{
+    background-color: #3F51B5;
+    grid-area: up-next;
+}
+@media screen and (max-width: 700px){
+
+  .ad{
+    display: none;
+  }
+    
+}
+
+/* Aplicando Responsividade */
+@media screen and (max-width: 700px){
+    
+    main{
+        max-width: 1200px;
+
+        grid-template-areas:
+        'video-player video-player ad     '
+        'video-player video-player up-next'
+        'video-info   actions      up-next'
+        'channel      subscribe    up-next';
+    }
+    
+}
